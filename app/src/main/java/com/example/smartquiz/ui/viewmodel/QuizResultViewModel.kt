@@ -11,13 +11,19 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
+
 class QuizResultViewModel(
-    application: Application
+    application: Application,
+    private val repository: QuizResultRepository
 ) : AndroidViewModel(application) {
 
-    private val repository = QuizResultRepository(
-        QuizDatabase.getDatabase(application).quizResultDao()
+    constructor(application: Application) : this(
+        application = application,
+        repository = QuizResultRepository(
+            QuizDatabase.getDatabase(application).quizResultDao()
+        )
     )
+
 
     val allResults: StateFlow<List<QuizResult>> =
         repository.allResults.stateIn(

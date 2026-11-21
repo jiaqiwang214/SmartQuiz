@@ -27,12 +27,19 @@ sealed interface QuizUiState {
 }
 
 
+
 class QuizViewModel(
-    application: Application
+    application: Application,
+    private val repository: QuizRepository,
+    private val quizPreferences: QuizPreferences
 ) : AndroidViewModel(application) {
 
-    private val repository = QuizRepository()
-    private val quizPreferences = QuizPreferences(application)
+    constructor(application: Application) : this(
+        application = application,
+        repository = QuizRepository(),
+        quizPreferences = QuizPreferences(application)
+    )
+
 
 
     private val _uiState =
