@@ -1,4 +1,3 @@
-
 package com.example.smartquiz
 
 import android.os.Bundle
@@ -29,8 +28,6 @@ import com.example.smartquiz.ui.theme.SmartQuizTheme
 import com.example.smartquiz.ui.viewmodel.QuizResultViewModel
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.runtime.collectAsState
-import androidx.lifecycle.viewmodel.compose.viewModel
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -41,7 +38,6 @@ import com.example.smartquiz.data.preferences.QuizPreferences
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.ButtonDefaults
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.smartquiz.util.QuizScoreCalculator
 
 
